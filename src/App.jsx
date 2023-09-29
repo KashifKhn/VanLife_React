@@ -1,7 +1,7 @@
 import Home from './pages/Home'
 import About from './pages/About'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-
+import './server'
 function App() {
 
   return (
