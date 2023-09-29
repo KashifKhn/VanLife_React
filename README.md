@@ -2,8 +2,7 @@
 
 
 ## Live Demo 
-[Live Demo Click Here](https://peppy-cascaron-61c0b5.netlify.app/){:target="_blank"}
-
+<a href="https://peppy-cascaron-61c0b5.netlify.app/" target="_blank">Live Demo Click Here</a>
 
 
 
