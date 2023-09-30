@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background-color: #FFF7ED;
@@ -10,12 +11,12 @@ html, body {
 }
 
 body::-webkit-scrollbar {
-display: none;
+  display: none;
 }
 
 body {
--ms-overflow-style: none;
-scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .App {
@@ -48,6 +49,13 @@ header .site-logo {
   font-weight: 900;
   font-size: 25px;
 }
+
+a.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
+}
+
 
 header a {
   text-decoration: none;
@@ -192,7 +200,7 @@ footer {
 
 .van-tile a {
   color: #161616;
-  text-decoration: none;    
+  text-decoration: none;
 }
 
 .van-tile img {
@@ -229,15 +237,18 @@ footer {
   color: #FFEAD0;
 }
 
-.van-type.simple:hover, .van-type.simple.selected {
+.van-type.simple:hover,
+.van-type.simple.selected {
   background-color: #E17654;
 }
 
-.van-type.rugged:hover, .van-type.rugged.selected {
+.van-type.rugged:hover,
+.van-type.rugged.selected {
   background-color: #115E59;
 }
 
-.van-type.luxury:hover, .van-type.luxury.selected {
+.van-type.luxury:hover,
+.van-type.luxury.selected {
   background-color: #161616;
 }
 
@@ -291,7 +302,7 @@ i[class*='van-type-'] {
   margin-bottom: 10px;
 }
 
-.van-detail > i {
+.van-detail>i {
   align-self: flex-start;
 }
 
