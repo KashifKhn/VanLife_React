@@ -18,7 +18,10 @@ const Vans = () => {
 
     const vanElements = vansDisplayed.map(van => (
         <div key={van.id} className="van-tile">
-            <Link to={van.id}>
+            <Link
+                to={van.id}
+                state={{search: `?${searchParams.toString()}`, type: typeFilter}}
+            >
                 <img src={van.imageUrl} />
             </Link>
             <div className="van-info">
