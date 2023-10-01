@@ -89,7 +89,6 @@ footer {
   display: block;
   color: black;
   text-decoration: none;
-  margin-top: 60px;
   margin-left: 26px;
 }
 
@@ -275,7 +274,7 @@ i[class*='van-type-'] {
 }
 
 .van-detail-container {
-  padding: 27px;
+  padding-inline: 27px;
 }
 
 .van-detail-container .back-button {
@@ -329,6 +328,7 @@ i[class*='van-type-'] {
 
 .host-nav {
   display: flex;
+  margin-bottom: 30px;
 }
 
 .host-nav a {
@@ -459,4 +459,14 @@ i[class*='van-type-'] {
 .host-van-detail-image {
   height: 100px;
   border-radius: 5px;
+}
+
+.not-found-container {
+  padding-inline: 26px;
+}
+
+.not-found-container .link-button {
+  width: 100%;
+  background-color: #161616;
+  color: white;
 }

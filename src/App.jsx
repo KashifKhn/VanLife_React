@@ -13,6 +13,7 @@ import HostVanPhotos from './pages/Host/HostVanPhotos'
 import HostVanPricing from './pages/Host/HostVanPricing'
 import Income from './pages/Host/Income'
 import Reviews from './pages/Host/Reviews'
+import Page404 from './pages/Page404'
 import './server'
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
                 <Route path='photos' element={<HostVanPhotos />} />
               </Route>
             </Route>
+            <Route path="*" element={<Page404/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
