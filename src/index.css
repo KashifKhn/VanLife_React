@@ -9,6 +9,11 @@ html, body {
   font-family: "Inter", sans-serif;
 }
 
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
 body::-webkit-scrollbar {
 display: none;
 }
@@ -182,6 +187,15 @@ footer {
 /*** VAN PAGES ***/
 .van-list-container {
   padding-inline: 23px
+}
+
+.van-list-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.van-list-filter-buttons > a {
+  margin-right: 15px;
 }
 
 .van-list {
