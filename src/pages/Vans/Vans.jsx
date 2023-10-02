@@ -5,11 +5,22 @@ const Vans = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [vansData, setVansData] = useState([]);
     const typeFilter = searchParams.get('type');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const loadVans = async () => {
-            const data = await getVans();
-            setVansData(data)
+            setLoading(true)
+            try {
+                const data = await getVans();
+                setVansData(data)
+            }
+            catch (err) {
+                setError(err)
+            }
+            finally {
+                setLoading(false)
+            }
         }
         loadVans()
     }, []);
@@ -23,7 +34,7 @@ const Vans = () => {
         <div key={van.id} className="van-tile">
             <Link
                 to={van.id}
-                state={{search: `?${searchParams.toString()}`, type: typeFilter}}
+                state={{ search: `?${searchParams.toString()}`, type: typeFilter }}
             >
                 <img src={van.imageUrl} />
             </Link>
@@ -44,6 +55,12 @@ const Vans = () => {
             return prevParam;
         })
     }
+
+    if (loading)
+        return <h1>Loading...</h1>
+
+    if (error)
+        return <h1>There was an error: {error.message}</h1>
 
 
     return (

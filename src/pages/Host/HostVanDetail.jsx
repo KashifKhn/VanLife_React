@@ -1,24 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useParams } from 'react-router-dom'
+import { getHostVans } from '../../api'
 
 
 const HostVanDetail = () => {
     const { id } = useParams()
-    const [currentVan, setCurrentVan] = useState();
+    const [currentVan, setCurrentVan] = useState({});
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
     const activeLinkStyles = {
         fontWeight: "bold",
         textDecoration: "underline",
         color: "#161616"
     }
-    React.useEffect(() => {
-        fetch(`/api/host/vans/${id}`)
-            .then(res => res.json())
-            .then(data => setCurrentVan(data.vans))
-    }, [])
+    useEffect(() => {
+        const loadVans = async () => {
+            setLoading(true)
+            try {
+                const data = await getHostVans(id);
+                console.log(data)
+                setCurrentVan(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        loadVans()
+    }, [id])
 
-    if (!currentVan) {
+    if (loading)
         return <h1>Loading...</h1>
-    }
+    if (error)
+        return <h1>There was an error: {error.message}</h1>
 
     return (
         <section>
