@@ -8,6 +8,7 @@ const Login = () => {
     const [error, setError] = useState(null)
     const location = useLocation();
     const navigate = useNavigate()
+    const fromPrevLocation = location.state?.prevLoc || '/host'
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -16,7 +17,7 @@ const Login = () => {
             .then(data => {
                 setError(null)
                 localStorage.setItem("loggedin", true)
-                navigate("/host", { replace: true })
+                navigate(fromPrevLocation, { replace: true })
             })
             .catch(err => setError(err))
             .finally(() => setStatus("idle"))
